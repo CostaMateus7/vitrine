@@ -9,6 +9,6 @@ export default createGlobalStyle`
   body{
     font-family: 'Oswald', sans-serif;
     overflow:hidden;
-    background-color: #222;
+    background-color: ${props => props.theme.body}
   }
 `

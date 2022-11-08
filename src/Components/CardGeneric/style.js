@@ -12,7 +12,7 @@ export const Card = styled.div`
   background-color: #fff;
 
   svg{
-    margin-left: 50px;
+    margin-left: 150px;
     margin-bottom: 10px;
     cursor: pointer;
   }
@@ -31,7 +31,8 @@ export const Card = styled.div`
     height: 330px;
     margin: 8px;
     svg{
-      margin-left: 30px;
+      margin-left: 150px;
+
     }
  }
 `

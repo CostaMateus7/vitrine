@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import { PgHome } from "../../Service/Api";
-import { BsFillCartPlusFill } from "react-icons/bs";
 import CardGeneric from "../CardGeneric";
 import ContainerGeneric from "../ContainerGeneric";
 import Paragrafo from "../Paragrafo";
 
 export default function CardHome(){
   const [products, setProducts] = useState([]);
+  
 
   useEffect(()=>{
     PgHome()
@@ -30,9 +30,9 @@ export default function CardHome(){
           <div>
           <p>{product.name}</p>
           <p>{product.description}</p>
-          <Paragrafo> De:  <s> R$99,00</s> por {product.Price} <BsFillCartPlusFill size={35}/> </Paragrafo>
+          <Paragrafo> Confira os Preços!! </Paragrafo>
           </div>
-          
+                   
         </CardGeneric>)
       })}
     </ContainerGeneric>

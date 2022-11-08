@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { HeaderContainer, Title, Sale, FooterHeader, Menu} from './style'
 import { SlBasket } from 'react-icons/sl'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import './style.css'
 import { Link } from 'react-router-dom';
 import MenuMobile from "../MenuMobile"
+import { contextCart } from "../../Context/CartContext";
 
 
 export default function Header(){
+  const { cart } = useContext(contextCart)
   const [mobile, setMobile] = useState(false);
+  const cartSize = cart.length;
   return(
     <> 
     <MenuMobile
@@ -22,8 +25,8 @@ export default function Header(){
       </Menu>
         <Title>Loja do Programador</Title>
       <Sale>
-        <button>1</button>
-        <SlBasket className="icone"/>
+        <div>{cartSize }</div>
+        <Link to="/compras"><SlBasket className="icone"/></Link>
         
       </Sale>
     </HeaderContainer>

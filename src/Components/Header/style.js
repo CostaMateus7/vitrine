@@ -76,7 +76,7 @@ export const Sale = styled.button`
   border: none;
   background-color: red;
   color: #fff;
-  button{
+  div{
     border-radius: 50%;
     background-color: rgb(128,0,0);
     position: absolute;

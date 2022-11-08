@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import { PgMug } from "../../Service/Api";
 import { BsFillCartPlusFill } from "react-icons/bs";
 import CardGeneric from "../CardGeneric";
@@ -6,10 +6,15 @@ import ContainerGeneric from "../ContainerGeneric";
 import Paragrafo from "../Paragrafo";
 import Header from "../Header"
 import Footer from "../Footer"
+import { contextCart } from "../../Context/CartContext";
 
 
 export default function CardHome(){
   const [products, setProducts] = useState([]);
+  const { addProduct } = useContext(contextCart)
+  function handleAddProduct(IdProduct, productCategory){
+    addProduct(IdProduct, productCategory)
+  }
 
   useEffect(()=>{
     PgMug()
@@ -35,7 +40,7 @@ export default function CardHome(){
           <div>
           <p>{product.name}</p>
           <p>{product.description}</p>
-          <Paragrafo>R$ {product.Price} <BsFillCartPlusFill size={35}/> </Paragrafo>
+          <Paragrafo>R$ {product.Price} <BsFillCartPlusFill size={35} onClick={()=>handleAddProduct(product.id, 'caneca')}/> </Paragrafo>
           </div>
           
         </CardGeneric>)
